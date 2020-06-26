@@ -1,0 +1,9 @@
+class = require 'middleclass'
+
+require 'UIBase'
+require 'UICard'
+require 'UICardDetails'
+
+
+require 'UIMain'
+UIMain:open()

@@ -1,6 +1,7 @@
-﻿obj
+obj
 Library
 .vs
 */*/StreamingAssets
 BFrameClient/Assembly-CSharp-Editor.csproj
 BFrameClient/Assembly-CSharp.csproj
+*/*/StreamingAssets*

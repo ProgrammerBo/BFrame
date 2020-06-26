@@ -1,0 +1,34 @@
+UIBase = class('UIBase')
+
+local this = UIBase
+local t_path_prefab = {nil,nil,nil}
+t_path_prefab[1] = 'UI/Prefab/'
+t_path_prefab[3] = '.ab'
+local HelperLuaCallCs = CS.HelperLuaCallCs
+local Destroy = CS.UnityEngine.GameObject.Destroy
+
+function this:open( args )
+	-- body
+	local function LoadUI( go )
+		-- body
+		self.gameObject = go
+		self.transform = go.transform
+		if self.init then
+			self.init( args )
+		end
+	end
+	--加载资源
+	t_path_prefab[2] = self.name
+	HelperLuaCallCs.LoadUI(table.concat(t_path_prefab),LoadUI)
+end
+
+function this:close( ... )
+	-- body
+	Destroy(self.gameObject)
+	self.go = nil
+end
+
+function this:isNil( ... )
+	-- body
+	return self.go == nil or self.go:Equals(nil)
+end
